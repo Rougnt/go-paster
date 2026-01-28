@@ -126,7 +126,7 @@ func main() {
 
 				// Type the character using simple TypeStr (or KeyTap for single chars)
 				// robotgo.TypeStr handles strings well usually.
-			robotgo.TypeStr(string(r))
+				robotgo.Type(string(r))
 
 				// Wait user interval
 				time.Sleep(time.Duration(interval * float64(time.Second)))
