@@ -11,7 +11,6 @@ import (
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/theme"
 	"fyne.io/fyne/v2/widget"
-	"github.com/go-vgo/robotgo"
 )
 
 func isASCII(s string) bool {
@@ -116,21 +115,8 @@ func main() {
 			progressBar.SetValue(0)
 
 			// Typing Loop
-			runes := []rune(textToType)
-			totalChars := len(runes)
-
-			for i, r := range runes {
-				// Update progress
-				progress := float64(i+1) / float64(totalChars)
-				progressBar.SetValue(progress)
-
-				// Type the character using simple TypeStr (or KeyTap for single chars)
-				// robotgo.TypeStr handles strings well usually.
-				robotgo.Type(string(r))
-
-				// Wait user interval
-				time.Sleep(time.Duration(interval * float64(time.Second)))
-			}
+			// Use our custom TypeString function which handles low-level Windows API
+			TypeString(textToType, interval)
 		}()
 	})
 
