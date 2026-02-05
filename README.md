@@ -9,6 +9,8 @@
 
 > 若机器无 OpenGL 或在 RDP 下使用，双击无反应，可能需要下载 `opengl32.dll`，参考[下载](#下载)章节
 
+![demo](https://github.com/user-attachments/assets/88ec1057-292c-465b-8cb8-e2a295bb21f2)
+
 1. 启动 GO-Paster
 2. 粘贴所需要输入的内容入输入框
 3. 调整 `Start Delay` 值为点击 `Start Typing` 按钮后延迟输入的时间。
